@@ -1,0 +1,28 @@
+{
+  "name": "bakend-framework",
+  "version": "1.0.0",
+  "description": "Framework of backend to create aplications in node.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leonardojrr/node-bakend-framework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leonardojrr/node-bakend-framework/issues"
+  },
+  "homepage": "https://github.com/Leonardojrr/node-bakend-framework#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.8",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
