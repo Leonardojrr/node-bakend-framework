@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const UsersRouter = require("./routes/users");
 const bodyParser = require('body-parser')
 
 app.listen(5000, () => {
@@ -11,4 +10,3 @@ app.listen(5000, () => {
 app.use(bodyParser.json());
 
 
-app.use("/users", UsersRouter);
