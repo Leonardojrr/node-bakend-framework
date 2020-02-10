@@ -7,7 +7,7 @@ class UsersService {
     this.mongoDB = new Mongo();
   }
 
-  async getUsers(query) {
+  getUsers = async (query)=>{
     if (!query) {
       query = {};
     }
@@ -15,23 +15,22 @@ class UsersService {
     return users;
   }
 
-  async getUser(email) {
+  getUser = async (email)=>{
     const user = await this.mongoDB.get(email, this.collection);
     return user;
   }
 
-  async createUser(data) {
-    data.password = await bcrypt.hash(data.password, 10);
+  createUser = async (data)=>{
     const userid = await this.mongoDB.create(data, this.collection);
     return userid;
   }
 
-  async updateUser(id, data) {
+  updateUser = async (id, data)=>{
     const user = await this.mongoDB.update(id, data, this.collection);
     return user;
   }
 
-  async deleteUser(id) {
+  deleteUser = async (id)=>{
     const user = await this.mongoDB.delete(id, this.collection);
     return user;
   }
