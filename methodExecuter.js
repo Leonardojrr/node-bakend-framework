@@ -1,7 +1,7 @@
 const express = require('express');
 const methodRouter = express.Router();
 
-methodRouter.post("/", async(req, resp, next) => {
+methodRouter.post("/", async(req, resp) => {
 
     let {Class, Method, Params} = req.body
     let classInstance = Reflect.construct(require(`./services/${Class}`),[])
