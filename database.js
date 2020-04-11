@@ -8,7 +8,10 @@ const DB_NAME = "test";
 
 class Mongo {
   constructor() {
-    this.client = new MongoClient(uri, { useNewUrlParser: true });
+    this.client = new MongoClient(uri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
     this.dbname = DB_NAME;
   }
 

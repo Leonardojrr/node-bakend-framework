@@ -1,17 +1,14 @@
-const express = require('express');
+const express = require("express");
 const methodRouter = express.Router();
+const securityMiddleware = require("./middlewares/security");
 
-methodRouter.post("/", async(req, resp) => {
+methodRouter.post("/", securityMiddleware, async (req, resp) => {
+  let { Class, Method, Params } = req.body;
+  let classInstance = Reflect.construct(require(`./services/${Class}`), []);
 
-    let {Class, Method, Params} = req.body
-    let classInstance = Reflect.construct(require(`./services/${Class}`),[])
+  let data = await Reflect.apply(classInstance[Method], undefined, Params);
 
-    let data = await Reflect.apply(classInstance[Method], undefined, Params);
-
-    resp.send(data)
-    
+  resp.send(data);
 });
 
-
-
-module.exports = methodRouter
+module.exports = methodRouter;
