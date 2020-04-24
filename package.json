@@ -4,7 +4,7 @@
   "description": "Framework of backend to create aplications in node.js",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "server": "node server.js"
   },
   "repository": {
     "type": "git",
